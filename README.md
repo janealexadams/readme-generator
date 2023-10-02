@@ -1,7 +1,7 @@
-## asdfgh
+## janealexadams
 MIT
 ## Description
-asdfgh
+janealexadams
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
@@ -11,15 +11,15 @@ asdfgh
 To install necessary dependencies, run the following command: 
 npm 1'
 ## Usage
-asdfgh
+janealexadams
 ## Credits
-asdfgh
+janealexadams
 ## License
 MIT
 ## Contributing
-asdfgh
+janealexadams
 ## Tests
 npm test
 ## Questions
-My Github username is: asdfgh
-Reach out to me with questions via email here: asdfgh
+My Github username is: janealexadams
+Reach out to me with questions via email here: janealexadams
