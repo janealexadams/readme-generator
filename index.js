@@ -89,16 +89,19 @@ const promptQuestions = () => {
     },
   ])
 
+}
+
 // TODO: Create a function to write README file
-function writeFile {
-    fs.writeFile('README.md') (err) =>
+function writeFile() {
+    fs.writeFile('README.md'), (err) =>
     err ? console.log(err) : console.log('Successfully created Readme file!')
-    );
+;
 }
 
 // TODO: Create a function to initialize app
 function init() {
     let answers = promptQuestions();
+    fileName = 'Readme.md'
     appendFile((answers.fileName),(generateMarkdown(answers)));
 }
 
