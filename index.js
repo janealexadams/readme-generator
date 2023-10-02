@@ -2,34 +2,37 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-const generateReadme = ({ username, email, name, description, license, installation, tests, usage, contributing }) =>
-  `## Readme Generator
+const generateReadme = ({ username, email, name, description, license, installation, tests, usage, credits, contributing, questions }) =>
+  `## ${name}
    ${license}
   ## Description
     ${description}
-    ${username}
-    ${email}
-    ${name}
   ## Table of Contents
     * [Installation](#installation)
     * [Usage](#usage)
     * [Credits](#credits)
     * [License](#license)
   ## Installation
-    ${installation}
+    To install necessary dependencies, run the following command: 
+    '${installation}'
   ## Usage
     ${usage}
+  ## Credits
+    ${credits}
   ## License
     ${license}
   ## Contributing
     ${contributing}
   ## Tests
     ${tests}
+  ## Questions
+    My Github username is: ${username}
+    Reach out to me with questions via email here: ${email}
   `;
   
 // TODO: Create an array of questions for user input
-inquirer
-  .prompt([
+const promptQuestions = () => {
+    return inquirer.prompt([
     {
         type: 'input',
         name: 'username',
@@ -75,6 +78,11 @@ inquirer
     },
     {
         type: 'input',
+        name: 'credits',
+        message: 'What credits would you like to add?',
+    },
+    {
+        type: 'input',
         name: 'contributing',
         message: 'What does the user need to know about contributing to the repo?',
     },
@@ -87,11 +95,11 @@ inquirer
       err ? console.log(err) : console.log('Successfully created Readme file!')
     );
   });
-
+}
 
 // TODO: Create a function to initialize app
 function init() {
-    prompt()
+    promptQuestions()
 }
 
 // Function call to initialize app
