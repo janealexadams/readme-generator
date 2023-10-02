@@ -3,32 +3,32 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 const generateReadme = ({ username, email, name, description, license, installation, tests, usage, credits, contributing, questions }) =>
-  `## ${name}
-   ${license}
-  ## Description
-    ${description}
-  ## Table of Contents
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Credits](#credits)
-    * [License](#license)
-  ## Installation
-    To install necessary dependencies, run the following command: 
-    '${installation}'
-  ## Usage
-    ${usage}
-  ## Credits
-    ${credits}
-  ## License
-    ${license}
-  ## Contributing
-    ${contributing}
-  ## Tests
-    ${tests}
-  ## Questions
-    My Github username is: ${username}
-    Reach out to me with questions via email here: ${email}
-  `;
+`## ${name}
+${license}
+## Description
+${description}
+## Table of Contents
+* [Installation](#installation)
+* [Usage](#usage)
+* [Credits](#credits)
+* [License](#license)
+## Installation
+To install necessary dependencies, run the following command: 
+${installation}'
+## Usage
+${usage}
+## Credits
+${credits}
+## License
+${license}
+## Contributing
+${contributing}
+## Tests
+${tests}
+## Questions
+My Github username is: ${username}
+Reach out to me with questions via email here: ${email}
+`;
   
 // TODO: Create an array of questions for user input
 const promptQuestions = () => {
@@ -58,6 +58,16 @@ const promptQuestions = () => {
         message: 'What kind of license should your project have?',
         name: 'license',
         choices: ['MIT', 'APACHE 2.0', 'GPO 3.0', 'BSD 3', 'None'],
+        if (MIT) {
+            name = "[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)";
+        else if (APACHE 2.0)
+            name = [![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+        else if (GPO 3.0)
+            name = 
+        else if (GPO 3.0)
+            name = [![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
+        else (None)
+            name = "None"
     },
     {
         type: 'list',
