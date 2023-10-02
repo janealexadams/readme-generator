@@ -1,9 +1,35 @@
 // TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+const generateReadme = ({ username, email, name, description, license, installation, tests, usage, contributing }) =>
+  `## Readme Generator
+   `${license}`
+  ## Description
+    `${description}`
+    `${username}`
+    `${email}`
+    `${name}`
+  ## Table of Contents
+    * [Installation](#installation)
+    * [Usage](#usage)
+    * [Credits](#credits)
+    * [License](#license)
+  ## Installation
+    `${installation}`
+  ## Usage
+    `${usage}`
+  ## License
+    `${license}`
+  ## Contributing
+    `${contributing}`
+  ## Tests
+    `${tests}`
+  `;
+  
 // TODO: Create an array of questions for user input
 inquirer
-  .promptQuestions([
+  .prompt([
     {
         type: 'input',
         name: 'username',
@@ -54,18 +80,18 @@ inquirer
     },
   ])
   // TODO: Create a function to write README file
-  .then((data) => {
-    const filename = `readme.me`;
+  .then((answers) => {
+    const readmePageContent = generateReadme(answers);
 
-    fs.writeFile(filename, JSON.stringify(data, null, '\t'), (err) =>
-      err ? console.log(err) : console.log('Readme generated!')
+    fs.writeFile('README.md', readmePageContent, (err) =>
+      err ? console.log(err) : console.log('Successfully created Readme file!')
     );
   });
 
 
 // TODO: Create a function to initialize app
 function init() {
-    promptQuestions()
+    prompt()
 }
 
 // Function call to initialize app
