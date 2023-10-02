@@ -4,27 +4,27 @@ const fs = require('fs');
 
 const generateReadme = ({ username, email, name, description, license, installation, tests, usage, contributing }) =>
   `## Readme Generator
-   `${license}`
+   ${license}
   ## Description
-    `${description}`
-    `${username}`
-    `${email}`
-    `${name}`
+    ${description}
+    ${username}
+    ${email}
+    ${name}
   ## Table of Contents
     * [Installation](#installation)
     * [Usage](#usage)
     * [Credits](#credits)
     * [License](#license)
   ## Installation
-    `${installation}`
+    ${installation}
   ## Usage
-    `${usage}`
+    ${usage}
   ## License
-    `${license}`
+    ${license}
   ## Contributing
-    `${contributing}`
+    ${contributing}
   ## Tests
-    `${tests}`
+    ${tests}
   `;
   
 // TODO: Create an array of questions for user input
