@@ -2,34 +2,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
-
-// const generateReadme = ({ username, email, name, description, license, installation, tests, usage, credits, contributing, questions }) =>
-// `## ${name}
-// ${license}
-// ## Description
-// ${description}
-// ## Table of Contents
-// * [Installation](#installation)
-// * [Usage](#usage)
-// * [Credits](#credits)
-// * [License](#license)
-// ## Installation
-// To install necessary dependencies, run the following command: 
-// ${installation}'
-// ## Usage
-// ${usage}
-// ## Credits
-// ${credits}
-// ## License
-// ${license}
-// ## Contributing
-// ${contributing}
-// ## Tests
-// ${tests}
-// ## Questions
-// My Github username is: ${username}
-// Reach out to me with questions via email here: ${email}
-// `;
   
 // TODO: Create an array of questions for user input
 const promptQuestions = () => {
@@ -92,17 +64,17 @@ const promptQuestions = () => {
 }
 
 // TODO: Create a function to write README file
-function writeFile() {
-    fs.writeFile('README.md'), (err) =>
-    err ? console.log(err) : console.log('Successfully created Readme file!')
-;
-}
+function appendFile(response) {
+    fs.writeFile('generated_README.md', response, (err) => {
+        err ? console.log(err) : console.log('Successfully created Readme file!')
+    }
+)}
 
 // TODO: Create a function to initialize app
 function init() {
-    let answers = promptQuestions();
-    fileName = 'Readme.md'
-    appendFile((answers.fileName),(generateMarkdown(answers)));
+    promptQuestions().then((answers) => {
+        appendFile((generateMarkdown(answers)));
+    })
 }
 
 // Function call to initialize app
