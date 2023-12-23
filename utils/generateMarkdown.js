@@ -1,4 +1,4 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
+// Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
 const licenseOptions = ["MIT", "Apache 2.0", "Mozilla Public License 2.0", "BSD 3"]
 
@@ -17,7 +17,7 @@ function renderLicenseBadge(license) {
 }
 
 
-// TODO: Create a function that returns the license link
+// Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
   if (license==='MIT'){
@@ -32,7 +32,7 @@ function renderLicenseLink(license) {
     return ""
   }
 }
-// TODO: Create a function that returns the license section of README
+// Create a function that returns the license section of README
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   if (!license) {
@@ -42,7 +42,7 @@ function renderLicenseSection(license) {
 This project uses the ${license} license.  
 `
 }
-// TODO: Create a function to generate markdown for README
+// Create a function to generate markdown for README
 function generateMarkdown(data) {
   return `
   # ${(data.name)}
