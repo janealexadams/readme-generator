@@ -34,7 +34,5 @@ If you have any questions about the repo, please contact me via email at janeale
 Created by Jane Adams. Existing code was provided by the UCLA Web Dev Bootcamp. 
 
 ## Deployment
-![README Generator](assets/images/readme-generator-screenshot.png)
-
 [Link to video walkthrough here.](https://drive.google.com/file/d/1jWleciUk_IyV-IZs744esAsOtHqVrUk4/view?usp=sharing)
 
